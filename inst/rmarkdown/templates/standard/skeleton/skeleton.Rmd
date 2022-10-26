@@ -1,0 +1,113 @@
+--- 
+title: "Title of the project"
+author: 
+    - "Author name"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    theme: united #or sandstone or simplex
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+link-citations: yes
+# bibliography:
+# - book.bib
+# - packages.bib
+# biblio-style: apalike
+---
+
+
+```{r setup, echo=FALSE, include= FALSE}
+rm(list = ls())
+install.packages('rectable')
+library(fanetc)
+library(knitr)
+library(extrafont)
+library(kableExtra)
+library(grid)
+library(gridExtra)
+library(reactable)
+knitr::opts_chunk$set(fig.align="center", 
+                      dev="png", 
+                      dev.args=list(pointsize=11), 
+                      echo=FALSE, 
+                      fig.width=6.5, 
+                      fig.show="hold", 
+                      fig.path = "./figures/",
+                      out.extra = 'style="border:20px solid white;"',
+                      concordance= TRUE,
+                      cache= FALSE)
+knit_hooks$set(inline = function(x){if (is.numeric(x)) round(x, 3) else x})
+options(knitr.kable.NA = '')
+
+```
+
+
+```{r, cache= FALSE}
+# Here we should load the data
+cars$study_id = 1:length(cars$speed)
+cars$colour  = factor(ifelse(cars$speed >10,'red','blue'))
+```
+
+
+
+# Methods {#methods}
+
+
+Clinical characteristics were summarized using descriptive statistics. Continuous variables were characterized using median and interquartile range; dichotomous or polytomous variables were characterized using frequencies. The time to Arrhythmia was summarized using the Kaplan-Meier curve. 
+
+
+# Results {#results} 
+
+In this study, we consider  `r length(unique(cars$study_id))` cars. The average speed was `r round(mean(cars$speed),2)`km/h. 
+
+
+
+## Descriptive tables {.tabset}
+
+The tabset is only if you have a huge number of tables, or if it is easier to compare them next to each other.
+
+### Cars  {-}
+
+```{r, echo=FALSE}
+tmp_tab  = table_one(cars) %>% 
+  filter(!grepl("^study_id", row_id),
+         !grepl("_meansd$", row_id)) %>% 
+      select(var_desp,
+             n,
+             stat)
+tmp_tab %>%  kable(caption = 'Summary of cars',
+        booktabs=TRUE, 
+        escape = FALSE,
+        align= c('l', 'c','c'),
+        col.names = c('Variable', 'N', 'Stat')) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = FALSE) %>%
+  add_indent(which(is.na(tmp_tab$n)))%>%
+    scroll_box( height = "500px")
+
+```
+
+### Cars by colour {-}
+
+```{r, echo=FALSE}
+tmp_tab  = table_one(cars, group = colour) %>% 
+  filter(!grepl("^study_id", row_id),
+         !grepl("_meansd$", row_id)) %>% 
+      select(var_desp,
+             starts_with('blue'),starts_with('red'),
+             pval)
+tmp_tab %>%  kable(caption = 'Summary of cars by colour',
+        booktabs=TRUE, 
+        escape = FALSE,
+        align= c('l', 'c','c','c','c','r'),
+        col.names = c('Variable', 'N', 'Stat', 'N', 'Stat','p-value')) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = FALSE) %>%
+  add_header_above(c('','Blue'= 2, 'Red'= 2, '')) %>%
+  add_indent(which(is.na(tmp_tab$n)))
+
+```
+
