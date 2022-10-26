@@ -1,5 +1,6 @@
 # TRCP_Templates
 
-This is  a R package to create standard reports. You can download and install it from ??
+This is  a R package to create standard reports. You can download and install it with the command
 
-R-markdown report templates and themes
+devtools::install_github('mbbrigitte/TRCP_Templates')
+
