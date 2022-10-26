@@ -21,7 +21,7 @@ link-citations: yes
 
 ```{r setup, echo=FALSE, include= FALSE}
 rm(list = ls())
-install.packages('rectable')
+#install.packages('rectable')
 library(fanetc)
 library(knitr)
 library(extrafont)
