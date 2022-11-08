@@ -13,9 +13,11 @@ devtools::install_github('mbbrigitte/TRCP_Templates')
 After installation, in your R-Studio, go to 
 File  ->  New file  ->  R Markdown   (the third option from the drop down)
 
-Then choose "From Template" and click on "Standard Report" from the TRCPTemplatePackage.
 
 ![image](https://user-images.githubusercontent.com/15571699/200608598-76633540-f745-47db-88b0-d35af76511d3.png)
+
+Then choose "From Template" and click on "Standard Report" from the TRCPTemplatePackage.
+
 
 ![image](https://user-images.githubusercontent.com/15571699/200610012-627b3f98-245f-4764-9996-393953dc88c3.png)
 
