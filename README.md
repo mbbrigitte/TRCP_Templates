@@ -15,7 +15,8 @@ File  ->  New file  ->  R Markdown   (the third option from the drop down)
 
 Then choose "From Template" and click on "Standard Report" from the TRCPTemplatePackage.
 
-![image](https://user-images.githubusercontent.com/15571699/200607936-90bcd37c-633c-4d38-bcb5-a15c4ae9b953.png)
+![image](https://user-images.githubusercontent.com/15571699/200608598-76633540-f745-47db-88b0-d35af76511d3.png)
+
 
 
 The default file-name is "Untitled1" and if you try to knit the document, it will automatically prompt you to save under another name. 
