@@ -5,6 +5,7 @@ author:
 date: "`r Sys.Date()`"
 output:
   bookdown::html_document2:
+    css: "style.css"
     theme: united #or sandstone or simplex
     toc: true
     toc_depth: 3
@@ -12,23 +13,19 @@ output:
       collapsed: false
       smooth_scroll: false
 link-citations: yes
-# bibliography:
-# - book.bib
+bibliography:
+ - book.bib
 # - packages.bib
-# biblio-style: apalike
+biblio-style: apalike
 ---
 
 
 ```{r setup, echo=FALSE, include= FALSE}
 rm(list = ls())
-install.packages('rectable')
 library(fanetc)
 library(knitr)
-library(extrafont)
 library(kableExtra)
-library(grid)
-library(gridExtra)
-library(reactable)
+
 knitr::opts_chunk$set(fig.align="center", 
                       dev="png", 
                       dev.args=list(pointsize=11), 
@@ -51,7 +48,15 @@ cars$study_id = 1:length(cars$speed)
 cars$colour  = factor(ifelse(cars$speed >10,'red','blue'))
 ```
 
+# Instructions  {-}
 
+If you need to highlight text, you can use _underscores_ or **asterixes** to do so. You can also add inline equations $a^2 + b^2 = c^2$.
+
+To refer to the results section, you can add use an at and ref to refer to it like here: \@ref(results). To add citations, write them in brackets like in this example  **knitr** [@xie2015].You will need to add those citations in the file book.bib in the correct format. book.bib needs to be saved in the same folder as your Rmd report file. 
+
+# Abstract
+
+Summarize the study group, what type of study it is, the main methods and results.
 
 # Methods {#methods}
 
@@ -60,6 +65,7 @@ Clinical characteristics were summarized using descriptive statistics. Continuou
 
 
 # Results {#results} 
+
 
 In this study, we consider  `r length(unique(cars$study_id))` cars. The average speed was `r round(mean(cars$speed),2)`km/h. 
 
@@ -110,4 +116,11 @@ tmp_tab %>%  kable(caption = 'Summary of cars by colour',
   add_indent(which(is.na(tmp_tab$n)))
 
 ```
+
+
+# Bibliography {-}
+
+<div id="refs"></div>
+
+# Appendix {-}
 
