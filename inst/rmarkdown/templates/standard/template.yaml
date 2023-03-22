@@ -1,1 +1,3 @@
 name: Standard Report
+description: This is to create a standard TRCP report template. There are examples on how to format and how to include descriptive tables.
+create_dir: true
