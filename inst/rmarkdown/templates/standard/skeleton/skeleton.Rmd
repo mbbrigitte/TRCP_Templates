@@ -17,7 +17,19 @@ bibliography:
  - book.bib
 # - packages.bib
 biblio-style: apalike
+
 ---
+
+<style>
+p.boxedtext {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+<!-- font-style: italic; -->
+}
+</style>
 
 
 ```{r setup, echo=FALSE, include= FALSE}
@@ -39,6 +51,8 @@ knitr::opts_chunk$set(fig.align="center",
 knit_hooks$set(inline = function(x){if (is.numeric(x)) round(x, 3) else x})
 options(knitr.kable.NA = '')
 
+
+
 ```
 
 
@@ -50,13 +64,17 @@ cars$colour  = factor(ifelse(cars$speed >10,'red','blue'))
 
 # Instructions  {-}
 
+ 
+
 If you need to highlight text, you can use _underscores_ or **asterixes** to do so. You can also add inline equations $a^2 + b^2 = c^2$.
 
 To refer to the results section, you can add use an at and ref to refer to it like here: \@ref(results). To add citations, write them in brackets like in this example  **knitr** [@xie2015].You will need to add those citations in the file book.bib in the correct format. book.bib needs to be saved in the same folder as your Rmd report file. 
 
 # Abstract
 
-Summarize the study group, what type of study it is, the main methods and results.
+<p class="boxedtext">
+Summarize the study group, what type of study it is, the main methods and results. This here also serves as an example on how to highlight your text by making a grey box around it. Use the code used above and below this paragraph here. The styling class is defined as 'boxedtext'.
+</p>
 
 # Methods {#methods}
 

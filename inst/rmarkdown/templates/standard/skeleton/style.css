@@ -1,5 +1,5 @@
 /* font */
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Open+Sans&display=swap');
 
@@ -42,7 +42,7 @@ img {
 /* page and margin for pagedown package only */
 @page {
   size: 8.5in 11in;
-  
+
   @bottom-left-corner {
     content: "";
     background-repeat: no-repeat;
@@ -50,22 +50,22 @@ img {
     /* background-size: 0.5in; */
     /* background-image: url(rru-logo-blue.svg); */
   }
-  
+
   @bottom-right-corner {
     content: counter(page);
     font-size: 12 pt;
   }
 }
 
-/* 
+/*
 @page:first {
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   @bottom-left-corner {
     background: none;
   }
-  
+
   @bottom-right-corner {
     background: none;
   }
