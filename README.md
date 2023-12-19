@@ -8,7 +8,7 @@ devtools::install_github('mbbrigitte/TRCP_Templates')
 ## Installation
 If you have fanetc installed, no need to do anything as it is included in the fanetc-package. 
 
-Open your R-studio (or Docker R-Studio) and install devtools. Then, you can install it through the command
+If you do not use fanetc, open your R-studio (or Docker R-Studio) and install devtools. Then, you can install it through the command
 devtools::install_github('mbbrigitte/TRCP_Templates'). 
 
 ## Useage
