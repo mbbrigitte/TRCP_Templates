@@ -21,7 +21,7 @@ biblio-style: apalike
 
 
 ```{r setup, echo=FALSE, include= FALSE}
-rm(list = ls())
+
 library(fanetc)
 library(knitr)
 library(kableExtra)
@@ -61,7 +61,9 @@ Summarize the study group, what type of study it is, the main methods and result
 # Methods {#methods}
 
 
-Clinical characteristics were summarized using descriptive statistics. Continuous variables were characterized using median and interquartile range; dichotomous or polytomous variables were characterized using frequencies. The time to Arrhythmia was summarized using the Kaplan-Meier curve. 
+Clinical characteristics were summarized using descriptive statistics. Continuous variables were characterized using median and interquartile range; dichotomous or polytomous variables were characterized using frequencies. Between-group comparisons were evaluated using Wilcoxon rank-sum tests for continuous variables and Fisher's exact tests for dichotomous and polytomous variables.
+
+The time to XY was summarized using the Kaplan-Meier curve. 
 
 
 # Results {#results} 
@@ -117,6 +119,9 @@ tmp_tab %>%  kable(caption = 'Summary of cars by colour',
 
 ```
 
+
+
+Here, `table_one()` reports mean and standard deviation and median and IQR for continuous variables; frequencies for dichotomous and polytomous variables. In presence of `group=` arguments, `table_one()` will perform two sample *t*-tests (with unequal variance) or Wilcoxon rank-sums tests if there are 2 groups; otherwise ANOVA and Kruskal-Wallis rank sum tests if there are more than 2 groups. The summary for the grouping variable will not included in the grouped table.
 
 # Bibliography {-}
 
