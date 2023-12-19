@@ -66,15 +66,20 @@ cars$colour  = factor(ifelse(cars$speed >10,'red','blue'))
 
  
 
-If you need to highlight text, you can use _underscores_ or **asterixes** to do so. You can also add inline equations $a^2 + b^2 = c^2$.
+If you need to highlight text, you can use _underscores_ or **asterixes** to do so. 
 
 To refer to the results section, you can add use an at and ref to refer to it like here: \@ref(results). To add citations, write them in brackets like in this example  **knitr** [@xie2015].You will need to add those citations in the file book.bib in the correct format. book.bib needs to be saved in the same folder as your Rmd report file. 
+
+You can add inline equations like this: $a^2 + b^2 = c^2$.
 
 # Abstract
 
 <p class="boxedtext">
-Summarize the study group, what type of study it is, the main methods and results. This here also serves as an example on how to highlight your text by making a grey box around it. Use the code used above and below this paragraph here. The styling class is defined as 'boxedtext'.
+Summarize the study group, what type of study it is, the main methods and results. 
 </p>
+
+This here also serves as an example on how to highlight your text by making a grey box around it. Use the code used above and below this paragraph here. The styling class is defined as 'boxedtext'.
+
 
 # Methods {#methods}
 
@@ -94,6 +99,8 @@ In this study, we consider  `r length(unique(cars$study_id))` cars. The average 
 ## Descriptive tables {.tabset}
 
 The tabset is only if you have a huge number of tables, or if it is easier to compare them next to each other.
+
+Here, `table_one()` reports mean and standard deviation and median and IQR for continuous variables; frequencies for dichotomous and polytomous variables. In presence of `group=` arguments, `table_one()` will perform two sample *t*-tests (with unequal variance) or Wilcoxon rank-sums tests if there are 2 groups; otherwise ANOVA and Kruskal-Wallis rank sum tests if there are more than 2 groups. The summary for the grouping variable will not included in the grouped table.
 
 ### Cars  {-}
 
@@ -139,7 +146,7 @@ tmp_tab %>%  kable(caption = 'Summary of cars by colour',
 
 
 
-Here, `table_one()` reports mean and standard deviation and median and IQR for continuous variables; frequencies for dichotomous and polytomous variables. In presence of `group=` arguments, `table_one()` will perform two sample *t*-tests (with unequal variance) or Wilcoxon rank-sums tests if there are 2 groups; otherwise ANOVA and Kruskal-Wallis rank sum tests if there are more than 2 groups. The summary for the grouping variable will not included in the grouped table.
+
 
 # Bibliography {-}
 
