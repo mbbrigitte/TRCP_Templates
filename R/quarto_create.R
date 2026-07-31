@@ -47,6 +47,9 @@ quarto_create <- function(path = ".", filename = "report.qmd") {
       destination,
       overwrite = FALSE
     )
+    if (!result) {
+      warning("Could not copy: ", source)
+    }
   }
 
   message("Created TRCP Quarto report: ", file.path(path, filename))
