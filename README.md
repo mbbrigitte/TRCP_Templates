@@ -11,6 +11,17 @@ If you have fanetc installed, no need to do anything as it is included in the fa
 If you do not use fanetc, open your R-studio (or Docker R-Studio) and install devtools. Then, you can install it through the command
 devtools::install_github('mbbrigitte/TRCP_Templates'). 
 
+
+There are two versions. One for Quarto documents (new) and the old one for Rmd documents.
+
+# How to use Quarto
+
+library(TRCPTemplatePackage)
+
+quarto_create()
+
+This will create a report.qmd in your current folder! That's it, just use it. 
+
 ## Useage
 After installation, in your R-Studio, go to 
 File  ->  New file  ->  R Markdown   (the third option from the drop down)

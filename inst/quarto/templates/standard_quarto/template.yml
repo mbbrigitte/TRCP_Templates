@@ -1,7 +1,0 @@
-title: Standard Quarto Report
-author: Brigitte Mueller
-version: 0.1.0
-contributes:
-  project:
-    project:
-      type: default
