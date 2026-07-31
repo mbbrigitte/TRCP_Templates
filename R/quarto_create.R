@@ -1,32 +1,30 @@
 #' Create a TRCP Quarto report template
 #'
-#' Copies the TRCP Quarto skeleton into the current project folder.
+#' Copies the TRCP Quarto report skeleton files into the current project.
 #'
 #' @param path Folder where the report should be created.
 #' @param filename Name of the qmd file.
 #'
 #' @export
 quarto_create <- function(path = ".", filename = "report.qmd") {
-  
-  template <- system.file(
+
+  template_dir <- system.file(
     "rmarkdown",
     "templates",
     "standard",
     "skeleton",
-    "skeleton.qmd",
     package = "TRCPTemplatePackage"
   )
-  
-  if (template == "") {
-    stop("Quarto template not found. Is the package installed?")
+
+  if (template_dir == "") {
+    stop("Quarto template folder not found. Is the package installed?")
   }
-  
+
   files_to_copy <- c(
     "skeleton.qmd",
     "references.bib",
     "styleq.css"
   )
-
 
   for (file in files_to_copy) {
 

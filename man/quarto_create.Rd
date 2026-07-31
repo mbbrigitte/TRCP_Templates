@@ -12,5 +12,5 @@ quarto_create(path = ".", filename = "report.qmd")
 \item{filename}{Name of the qmd file.}
 }
 \description{
-Copies the TRCP Quarto skeleton into the current project folder.
+Copies the TRCP Quarto report skeleton files into the current project.
 }
