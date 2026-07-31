@@ -21,13 +21,37 @@ quarto_create <- function(path = ".", filename = "report.qmd") {
     stop("Quarto template not found. Is the package installed?")
   }
   
-  destination <- file.path(path, filename)
-  
-  if (file.exists(destination)) {
-    stop("File already exists: ", destination)
+  files_to_copy <- c(
+    "skeleton.qmd",
+    "references.bib",
+    "styleq.css"
+  )
+
+
+  for (file in files_to_copy) {
+
+    source <- file.path(template_dir, file)
+
+    if (!file.exists(source)) {
+      stop("Template file missing: ", source)
+    }
+
+    destination_name <- ifelse(
+      file == "skeleton.qmd",
+      filename,
+      file
+    )
+
+    destination <- file.path(path, destination_name)
+
+    file.copy(
+      source,
+      destination,
+      overwrite = FALSE
+    )
   }
-  
-  file.copy(template, destination)
-  
-  message("Created: ", destination)
+
+  message("Created TRCP Quarto report: ", file.path(path, filename))
+
+  invisible(path)
 }
