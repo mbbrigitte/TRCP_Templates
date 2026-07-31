@@ -22,7 +22,7 @@ format:
 crossref:
   fig-title: "Figure"
   tbl-title: "Table"
-bibliography: references.bib # see https://quarto.org/docs/authoring/citations.html
+#bibliography: references.bib # uncomment when you have a bib in your folder. info https://quarto.org/docs/authoring/citations.html
 csl: https://www.zotero.org/styles/apa
 link-citations: true
 editor: visual
