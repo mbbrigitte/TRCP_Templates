@@ -1,5 +1,8 @@
 # TRCP_Templates
 
+Note: As of October 2026, this package is retired and replaced by the package trcpproject which creates the folders as well as Quarto templates within the specific report folder.
+
+
 This is  a R package to create standard reports. You can download and install it with the command
 
 devtools::install_github('mbbrigitte/TRCP_Templates')
