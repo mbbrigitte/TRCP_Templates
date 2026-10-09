@@ -26,7 +26,7 @@ quarto_create()
 
 This will create a report.qmd in your current folder! That's it, just use it. 
 
-## Useage
+## Useage of Rmd
 After installation, in your R-Studio, go to 
 File  ->  New file  ->  R Markdown   (the third option from the drop down)
 
